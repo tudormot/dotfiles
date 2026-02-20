@@ -1,22 +1,62 @@
-set nocompatible " do not have strict vi compatibility
-syntax on 
-set number " set line number
-set relativenumber " set relative line number
-set autoindent " when new line, cursor checks where the previous line started
+" --- GENERAL SETTINGS ---
+set nocompatible            " Disable compatibility with old Vi
+" filetype plugin indent on   " Enable filetype detection
+syntax on                   " Enable syntax highlighting
+set number                  " Show line numbers
+set relativenumber          " Show relative line numbers
+" set cursorline              " Highlight current line
+set showcmd                 " Show partial commands
+set wildmenu                " Visual autocomplete for command menu
+set showmatch               " Highlight matching brackets
+set hidden                  " Switch buffers without saving
+set scrolloff=8             " Keep context while scrolling
+set backspace=indent,eol,start " Standard backspace behavior
 
-set softtabstop=0 noexpandtab shiftwidth=4 " tab behaviour
-
-" searching:
-set incsearch " colours what was matched, when searching
-set smartcase " case-insensitive searching, but case-sensitive if you use capital letters
-set hlsearch " highlights all search results
-set hidden " allow switching buffers without saving
-
-
-nnoremap ; :o
 " use » to mark Tabs and ° to mark trailing whitespace. This is a
 " non-obtrusive way to mark these special characters.
 set list listchars=tab:»\ ,trail:°
-
 set clipboard=unnamedplus
 
+" --- SEARCH ---
+set incsearch               " Search as you type
+set hlsearch                " Highlight search results
+set ignorecase              " Ignore case in search...
+set smartcase               " ...unless there's a capital letter
+
+" --- INDENTATION ---
+set expandtab               " Tabs are spaces
+set shiftwidth=4            " Indent by 4 spaces
+set tabstop=4               " Tab key = 4 spaces
+set autoindent              " Maintain indent on new lines
+
+" --- REMAPS ---
+" Set leader key to Space
+let mapleader = " "
+
+" Exit insert mode quickly
+inoremap jj <Esc>
+inoremap jk <Esc>
+
+" Clear search highlights with Backspace
+nnoremap <BS> :noh<CR>
+
+" Navigate windows with Ctrl + hjkl
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Move by visual lines (better for wrapped text)
+nnoremap j gj
+nnoremap k gk
+
+" Disable the accidental 'Ex Mode' trap
+" nnoremap Q <nop>
+
+" --- VISUAL MODE ---
+" Stay in visual mode after indenting
+vnoremap < <gv
+vnoremap > >gv
+
+" Paste over text without losing your original clipboard buffer
+xnoremap p "_dP
