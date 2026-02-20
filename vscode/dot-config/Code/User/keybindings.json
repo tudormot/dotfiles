@@ -1,0 +1,5 @@
+// Place your key bindings in this file to override the defaults
+[
+    // Only escape vim insert mode, when hints are not visible
+    { "key": "escape", "command": "extension.vim_escape"    , "when": "visible && !parameterHintsVisible && !suggestWidgetVisible" },
+]

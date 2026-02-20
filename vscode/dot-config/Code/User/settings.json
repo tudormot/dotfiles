@@ -1,0 +1,49 @@
+{
+    "geminicodeassist.project": "aipp-internal-testing",
+    "geminicodeassist.displayInlineContextHint": true,
+    "security.workspace.trust.untrustedFiles": "open",
+
+    "files.exclude": {
+      "**/.git": false,
+      "**/.git/{objects,logs,refs,index,rr-cache}": true
+    },
+    "editor.lineNumbers": "relative",
+    "vim.hlsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.visualstar": true,
+    "vim.highlightedyank.enable": true,
+    "extensions.experimental.affinity": {
+      "vscodevim.vim": 1
+    },
+    "vim.insertModeKeyBindings": [
+    {
+        "before": ["j", "j"],
+        "after": ["<Esc>"]
+    }
+    ],
+    "[json]": {
+      "files.trimFinalNewlines": true
+    },
+    
+    // font, size
+    "window.zoomLevel": 0,
+    "editor.fontFamily": "JetBrains Mono",
+    "editor.fontSize": 14,
+
+    "diffEditor.codeLens": true,
+    "editor.inlineSuggest.enabled": true,
+    "breadcrumbs.enabled": true,
+    "editor.minimap.enabled": false,
+    "vim.mouseSelectionGoesIntoVisualMode": false,
+    "vim.handleKeys": {
+        "<C-p>": false
+    },
+    "git.blame.editorDecoration.enabled": false,
+    "git.blame.statusBarItem.enabled": false,
+    "gitlens.rebaseEditor.ordering": "asc",
+    "terminal.integrated.suggest.enabled": true,
+    "workbench.editorAssociations": {
+      "git-rebase-todo": "default"
+    },
+    "git.openRepositoryInParentFolders": "never",
+}

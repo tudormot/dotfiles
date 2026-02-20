@@ -1,0 +1,33 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/themes/afterglow.toml"
+]
+
+[keyboard]
+bindings = [
+    { key= "Q", mods = "Control", action = "Quit" }
+]
+
+[window]
+padding = { x = 5, y = 5 }
+dynamic_padding = true
+opacity = 1.0  # 0.0 is transparent, 1.0 is opaque
+
+[font]
+size = 10.0
+
+[font.bold]
+family="JetBrains Mono"
+style = "Bold"
+
+[font.bold_italic]
+family="JetBrains Mono"
+style = "Bold Italic"
+
+[font.italic]
+family="JetBrains Mono"
+style = "Italic"
+
+[font.normal]
+family="JetBrains Mono"
+style = "Regular"
