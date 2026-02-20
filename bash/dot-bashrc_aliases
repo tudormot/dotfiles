@@ -1,0 +1,7 @@
+# --- GIT STUFF ---
+# git show latest checked out branches:
+alias git-sorted-branch='git log -g --grep-reflog "checkout:" --format="%gs" | cat -n | sed -E "s/^\s+([0-9]+).*from (.*) to .*/\1 \2/g" | tac | tail -n 20'
+
+# Recursive git status:
+alias recursive_git_status='find . -type d -name ".git" | while read dir ; do sh -c "cd $dir/../ && echo -e \"\nGIT STATUS IN ${dir//\.git/}\" && git status -s" ; done'
+
