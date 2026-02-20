@@ -2,8 +2,8 @@
 # add configs here which should be more or less useful on any machine
 # add config really tailored to this local machine, in .bashrc_local
 
-if [ -f ~/.bashrc_local ]; then
-    . ~/.bashrc_local
+if [ -f ~/.bash_local ]; then
+    . ~/.bash_local
 fi
 
 bind 'set bell-style none'
