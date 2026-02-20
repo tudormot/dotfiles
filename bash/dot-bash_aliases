@@ -10,6 +10,9 @@ bind 'set bell-style none'
 alias gemini='/google/bin/releases/gemini-cli/tools/gemini'
 
 # --- GIT STUFF ---
+# pretty git log
+alias gl="git log --abbrev-commit --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ci) %Cblue%an <%ae>%Creset'"
+
 # git show latest checked out branches:
 alias git-sorted-branch='git log -g --grep-reflog "checkout:" --format="%gs" | cat -n | sed -E "s/^\s+([0-9]+).*from (.*) to .*/\1 \2/g" | tac | tail -n 20'
 
