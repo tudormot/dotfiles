@@ -24,7 +24,7 @@
     "[json]": {
       "files.trimFinalNewlines": true
     },
-    
+
     // font, size
     "window.zoomLevel": 0,
     "editor.fontFamily": "JetBrains Mono",
@@ -46,4 +46,15 @@
       "git-rebase-todo": "default"
     },
     "git.openRepositoryInParentFolders": "never",
+
+    // tmux as default shell env
+    "terminal.integrated.profiles.osx": {
+      "tmux-shell": {
+        "path": "tmux",
+        "args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"]
+      }
+    },
+    "terminal.integrated.defaultProfile.osx": "tmux-shell"
+
+
 }
