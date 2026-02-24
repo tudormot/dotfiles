@@ -4,9 +4,23 @@
 # GNU Stow should be installed. Run this from the directory that the script
 # lives in.
 
+# 0. Install stow and tmux plugin manager(TPM)
+if ! command -v stow &> /dev/null; then
+    echo "Installing GNU Stow..."
+    # Assuming Ubuntu/Debian; change to 'brew install' or 'pacman -S' if needed
+    sudo apt update && sudo apt install -y stow tmux git
+fi
+
+TPM_DIR="$HOME/.tmux/plugins/tpm"
+if [ ! -d "$TPM_DIR" ]; then
+    echo "Cloning TPM..."
+    git clone https://github.com/tmux-plugins/tpm "$TPM_DIR"
+else
+    echo "TPM already installed."
+fi
+
 # 1. Get the absolute path of the directory where THIS script lives
 DOTFILES_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
-
 echo "Mapping dotfiles from: $DOTFILES_DIR"
 
 # 2. Change to that directory so Stow knows where the 'packages' are
