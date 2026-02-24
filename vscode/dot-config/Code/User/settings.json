@@ -48,13 +48,13 @@
     "git.openRepositoryInParentFolders": "never",
 
     // tmux as default shell env
-    "terminal.integrated.profiles.osx": {
+    "terminal.integrated.profiles.linux": {
       "tmux-shell": {
         "path": "tmux",
         "args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"]
       }
     },
-    "terminal.integrated.defaultProfile.osx": "tmux-shell"
+    "terminal.integrated.defaultProfile.linux": "tmux-shell"
 
 
 }
