@@ -37,9 +37,6 @@ let mapleader = " "
 inoremap jj <Esc>
 inoremap jk <Esc>
 
-" Clear search highlights with Backspace
-nnoremap <BS> :noh<CR>
-
 " Navigate windows with Ctrl + hjkl
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -60,3 +57,6 @@ vnoremap > >gv
 
 " Paste over text without losing your original clipboard buffer
 xnoremap p "_dP
+
+" Clear search highlight when pressing Esc in Normal Mode
+nnoremap <silent> <Esc> :noh<CR><Esc>

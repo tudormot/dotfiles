@@ -34,9 +34,9 @@
     "editor.inlineSuggest.enabled": true,
     "breadcrumbs.enabled": true,
     "editor.minimap.enabled": false,
-    "vim.mouseSelectionGoesIntoVisualMode": false,
     "vim.handleKeys": {
-        "<C-p>": false
+        "<C-p>": false,
+        "<C-w>": true
     },
     "git.blame.editorDecoration.enabled": false,
     "git.blame.statusBarItem.enabled": false,
@@ -49,12 +49,14 @@
 
     // tmux as default shell env
     "terminal.integrated.profiles.linux": {
-      "tmux-shell": {
-        "path": "tmux",
-        "args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"]
+      "tmx2": {
+        "path": "tmx2",
+        "args": ["new-session", "-A", "-s", "vscode"]
       }
     },
-    "terminal.integrated.defaultProfile.linux": "tmux-shell"
+    "terminal.integrated.defaultProfile.linux": "tmx2",
+    "terminal.integrated.defaultLocation": "editor",
 
-
+    // listen to virtual keys remapped by OS: allows caps lock as esc rebind
+    "keyboard.dispatch": "keyCode"
 }

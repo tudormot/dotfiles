@@ -3,6 +3,10 @@ import = [
     "~/.config/alacritty/themes/themes/themes/afterglow.toml"
 ]
 
+# allows OSC52 for copy to clipboard from ssh
+[selection]
+save_to_clipboard = true
+
 [keyboard]
 bindings = [
     { key= "Q", mods = "Control", action = "Quit" }
