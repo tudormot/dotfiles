@@ -33,6 +33,9 @@ set autoindent              " Maintain indent on new lines
 " Set leader key to Space
 let mapleader = " "
 
+" Clear search highlight when pressing Esc in Normal Mode
+nnoremap <silent> <Esc> :noh<CR><Esc>
+
 " Exit insert mode quickly
 inoremap jj <Esc>
 inoremap jk <Esc>
@@ -55,8 +58,20 @@ nnoremap k gk
 vnoremap < <gv
 vnoremap > >gv
 
-" Paste over text without losing your original clipboard buffer
-xnoremap p "_dP
 
-" Clear search highlight when pressing Esc in Normal Mode
-nnoremap <silent> <Esc> :noh<CR><Esc>
+call plug#begin()
+
+" List your plugins here
+Plug 'ojroques/vim-oscyank', {'branch': 'main'}
+Plug 'machakann/vim-highlightedyank'
+
+call plug#end()
+
+" Configs of plugins:
+let g:highlightedyank_highlight_duration = 500
+let g:highlightedyank_highlight_in_visual = 0
+
+augroup VimOSCYank
+  autocmd!
+  autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankRegister "' | endif
+augroup END
