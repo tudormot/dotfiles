@@ -8,6 +8,7 @@ fi
 
 bind 'set bell-style none'
 alias gemini='/google/bin/releases/gemini-cli/tools/gemini'
+alias jetski='/google/bin/releases/jetski-devs/tools/cli'
 
 # --- GIT STUFF ---
 # pretty git log
@@ -19,3 +20,5 @@ alias git-sorted-branch='git log -g --grep-reflog "checkout:" --format="%gs" | c
 # Recursive git status:
 alias recursive_git_status='find . -type d -name ".git" | while read dir ; do sh -c "cd $dir/../ && echo -e \"\nGIT STATUS IN ${dir//\.git/}\" && git status -s" ; done'
 
+alias fd=fdfind
+alias tcopy="tmux load-buffer -w -"
