@@ -1,0 +1,17 @@
+{
+  "allowNonWorkspaceAccess": true,
+  "editor": "vim",
+  "historySize": -1,
+  "permissions": {
+    "allow": [
+      "command(*)",
+      "read_file(*)",
+      "write_file(*)",
+      "read_url(*)",
+      "mcp(*)"
+    ]
+  },
+  "runningLightSpeed": "fast",
+  "toolPermission": "always-proceed",
+  "verbosity": "low"
+}
