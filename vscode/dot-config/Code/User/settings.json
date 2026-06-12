@@ -2,6 +2,7 @@
     "geminicodeassist.project": "aipp-internal-testing",
     "geminicodeassist.displayInlineContextHint": true,
     "security.workspace.trust.untrustedFiles": "open",
+    "vsidl.androidBuildTop": "/usr/local/google/home/tmot/Workspace/main-swcar-dev",
 
     "files.exclude": {
       "**/.git": false,
