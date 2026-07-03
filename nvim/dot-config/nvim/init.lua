@@ -41,8 +41,10 @@ vim.opt.listchars = { tab = "» ", trail = "°" }
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR><Esc>', { silent = true })
 
 -- Exit insert mode
-vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('i', 'jk', '<Esc>')
+
+-- Exit terminal mode
+vim.keymap.set('t', 'jk', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
 
 -- Window navigation
 vim.keymap.set('n', '<C-h>', '<C-w>h')
