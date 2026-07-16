@@ -44,7 +44,8 @@ for dir in */; do
         # -v: Verbose (tells you what it's doing)
         # -R: Restow (refreshes links if they already exist)
         # -t: Target (explicitly set to $HOME)
-        stow --dotfiles -v -R -t "$HOME" "$package"
+        # --no-folding: Disable directory folding to prevent unfolding bugs with --dotfiles
+        stow --no-folding --dotfiles -v -R -t "$HOME" "$package"
     fi
 done
 
