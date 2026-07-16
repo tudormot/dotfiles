@@ -1,6 +1,6 @@
 " --- GENERAL SETTINGS ---
 set nocompatible            " Disable compatibility with old Vi
-" filetype plugin indent on   " Enable filetype detection
+filetype plugin indent on   " Enable filetype detection
 syntax on                   " Enable syntax highlighting
 set number                  " Show line numbers
 set relativenumber          " Show relative line numbers
@@ -65,6 +65,13 @@ call plug#begin()
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 Plug 'machakann/vim-highlightedyank'
 
+
+
+" FZF (Fuzzy Finder)
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+
 call plug#end()
 
 " Configs of plugins:
@@ -75,3 +82,10 @@ augroup VimOSCYank
   autocmd!
   autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankRegister "' | endif
 augroup END
+
+" --- FZF CONFIGURATION ---
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>g :Rg<CR>
+nnoremap <leader>t :Tags<CR>
+
