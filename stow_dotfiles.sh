@@ -26,6 +26,9 @@ echo "Mapping dotfiles from: $DOTFILES_DIR"
 # 2. Change to that directory so Stow knows where the 'packages' are
 cd "$DOTFILES_DIR"
 
+# Ensure target directories exist so Stow links contents rather than folding directories
+mkdir -p "$HOME/.config"
+
 # 3. List of folders to ignore (like .git, or the script itself)
 IGNORE_LIST=("stow_dotfiles.sh" ".git" "README.md" "LICENSE")
 
