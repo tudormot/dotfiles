@@ -93,16 +93,18 @@ return {
     },
   },
 
-  -- Kanagawa Color Scheme (dims inactive splits AND unfocused tmux panes)
+  -- Gruvbox Material Medium Dark Color Scheme (dims inactive splits AND unfocused tmux panes)
   {
-    "rebelot/kanagawa.nvim",
+    "sainnhe/gruvbox-material",
     lazy = false,
     priority = 1000,
     config = function()
-      require("kanagawa").setup({
-        dimInactive = true,
-      })
-      vim.cmd("colorscheme kanagawa-dragon")
+      vim.g.gruvbox_material_background = "medium"
+      vim.g.gruvbox_material_foreground = "material"
+      vim.g.gruvbox_material_enable_italic = true
+      vim.g.gruvbox_material_dim_inactive_windows = 1
+      vim.g.gruvbox_material_better_performance = 1
+      vim.cmd("colorscheme gruvbox-material")
 
       -- Also dim the active Neovim split when its enclosing tmux pane loses focus
       local focus_grp = vim.api.nvim_create_augroup("sdv-tmux-focus-dim", { clear = true })
