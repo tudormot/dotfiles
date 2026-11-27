@@ -1,0 +1,88 @@
+* {
+    /* Uses standard desktop system monospace sans-serif fonts */
+    font-family: "JetBrainsMono Nerd Font", "monospace";
+    font-size: 13px;
+    border: none;
+    border-radius: 0; /* Default swaybar has zero rounding */
+    padding: 0;
+    margin: 0;
+}
+
+window#waybar {
+    background-color: #000000; /* Flat pitch black bar background */
+    color: #ffffff;
+}
+
+/* Base formatting for all utility modules on the right side */
+#clock,
+#network,
+#bluetooth,
+#wireplumber,
+#backlight,
+#battery,
+#custom-power,
+#tray {
+    padding: 0 10px;
+    background-color: transparent;
+    border-left: 1px solid #333333; /* Clean subtle divider line */
+}
+
+/* Make the power button look balanced and change color slightly on hover */
+#custom-power {
+    color: #ffffff;
+    font-size: 14px;
+    padding-right: 12px;
+}
+
+#custom-power:hover {
+    background-color: #222222;
+}
+
+/* ==========================================
+   DEFAULT SWAY WORKSPACE TAGS
+   ========================================== */
+#workspaces button {
+    padding: 0 12px;
+    background-color: #333333; /* Inactive workspace color */
+    color: #888888;            /* Dimmed text for inactive */
+    border-bottom: 1px solid #333333;
+}
+
+#workspaces button.focused {
+    background-color: #4c7899; /* The iconic Default Sway Blue */
+    color: #ffffff;            /* Bright white text */
+    border-bottom: 1px solid #4c7899;
+}
+
+#workspaces button.urgent {
+    background-color: #900000; /* Default Sway Urgent Red */
+    color: #ffffff;
+}
+
+#workspaces button:hover {
+    background-color: #222222;
+}
+
+/* Centered window info styling */
+#window {
+    color: #ffffff;
+    font-weight: normal;
+}
+
+/* Mode overlay styling (e.g. when you hit Mod+R to resize) */
+#mode {
+    background-color: #900000;
+    color: #ffffff;
+    padding: 0 10px;
+}
+
+/* Flash the battery red when critically low */
+#battery.critical:not(.charging) {
+    background-color: #900000;
+    color: #ffffff;
+}
+
+/* Dim muted audio/microphone indicators */
+#wireplumber.muted {
+    color: #888888;
+}
