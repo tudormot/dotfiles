@@ -28,14 +28,25 @@ for arg in "$@"; do
     esac
 done
 
-# Install stow and tmux plugin manager(TPM)
-if ! command -v stow &> /dev/null; then
-    echo "Installing GNU Stow..."
-    # Assuming Ubuntu/Debian; change to 'brew install' or 'pacman -S' if needed
-    sudo apt update && sudo apt install -y stow tmux git
-fi
-
+# Install core apt packages (stow, tmux, git, pipx), tldr via pipx, and TPM
 if [ "$ACTION" = "-R" ]; then
+    APT_PKGS=()
+    command -v stow &> /dev/null || APT_PKGS+=(stow)
+    command -v tmux &> /dev/null || APT_PKGS+=(tmux)
+    command -v git  &> /dev/null || APT_PKGS+=(git)
+    command -v pipx &> /dev/null || APT_PKGS+=(pipx)
+
+    if [ ${#APT_PKGS[@]} -gt 0 ]; then
+        echo "Installing missing apt packages: ${APT_PKGS[*]}..."
+        # Assuming Ubuntu/Debian; change to 'brew install' or 'pacman -S' if needed
+        sudo apt update && sudo apt install -y "${APT_PKGS[@]}"
+    fi
+
+    if command -v pipx &> /dev/null && ! command -v tldr &> /dev/null && [ ! -x "$HOME/.local/bin/tldr" ]; then
+        echo "Installing tldr via pipx..."
+        pipx install tldr
+    fi
+
     TPM_DIR="$HOME/.tmux/plugins/tpm"
     if [ ! -d "$TPM_DIR" ]; then
         echo "Cloning TPM..."
