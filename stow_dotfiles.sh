@@ -56,7 +56,7 @@ cd "$DOTFILES_DIR"
 mkdir -p "$HOME/.config"
 
 # 3. List of folders to ignore (like .git, or the script itself)
-IGNORE_LIST=("stow_dotfiles.sh" ".git" "README.md" "LICENSE")
+IGNORE_LIST=("stow_dotfiles.sh" ".git" "README.md" "LICENSE" "helpfiles")
 
 # 4. Loop through every directory in the dotfiles folder
 for dir in */; do
