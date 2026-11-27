@@ -1,6 +1,6 @@
 [general]
 import = [
-    "~/.config/alacritty/themes/themes/themes/afterglow.toml"
+    "~/.config/alacritty/themes/themes/afterglow.toml"
 ]
 
 # allows OSC52 for copy to clipboard from ssh
@@ -9,7 +9,8 @@ save_to_clipboard = true
 
 [keyboard]
 bindings = [
-    { key= "Q", mods = "Control", action = "Quit" }
+    { key = "Q", mods = "Control", action = "Quit" },
+    { key = "+", mods = "Control|Shift", action = "IncreaseFontSize" }
 ]
 
 [window]
@@ -18,20 +19,20 @@ dynamic_padding = true
 opacity = 1.0  # 0.0 is transparent, 1.0 is opaque
 
 [font]
-size = 10.0
+size = 9.75
 
 [font.bold]
-family="JetBrains Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Bold"
 
 [font.bold_italic]
-family="JetBrains Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Bold Italic"
 
 [font.italic]
-family="JetBrains Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Italic"
 
 [font.normal]
-family="JetBrains Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Regular"

@@ -6,6 +6,10 @@ if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
 
+if [[ -d "$HOME/.local/bin" && ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+
 bind 'set bell-style none'
 alias gemini='/google/bin/releases/gemini-cli/tools/gemini'
 alias jetski='/google/bin/releases/jetski-devs/tools/cli'
@@ -22,3 +26,4 @@ alias recursive_git_status='find . -type d -name ".git" | while read dir ; do sh
 
 alias fd=fdfind
 alias tcopy="tmux load-buffer -w -"
+alias vim="nvim"
