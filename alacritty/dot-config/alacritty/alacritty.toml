@@ -1,6 +1,6 @@
 [general]
 import = [
-    "~/.config/alacritty/themes/themes/afterglow.toml"
+    "~/.config/alacritty/themes/themes/kanagawa_dragon.toml"
 ]
 
 # allows OSC52 for copy to clipboard from ssh

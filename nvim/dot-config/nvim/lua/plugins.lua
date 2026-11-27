@@ -102,7 +102,7 @@ return {
       require("kanagawa").setup({
         dimInactive = true,
       })
-      vim.cmd("colorscheme kanagawa-wave")
+      vim.cmd("colorscheme kanagawa-dragon")
 
       -- Also dim the active Neovim split when its enclosing tmux pane loses focus
       local focus_grp = vim.api.nvim_create_augroup("sdv-tmux-focus-dim", { clear = true })
