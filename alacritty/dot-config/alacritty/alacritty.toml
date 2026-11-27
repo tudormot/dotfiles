@@ -19,7 +19,7 @@ dynamic_padding = true
 opacity = 1.0  # 0.0 is transparent, 1.0 is opaque
 
 [font]
-size = 9.75
+size = 10.5
 
 [font.bold]
 family = "JetBrainsMono Nerd Font Mono"
