@@ -4,6 +4,11 @@
 # GNU Stow should be installed. Run this from the directory that the script
 # lives in.
 
+if [ "$EUID" -eq 0 ]; then
+    echo "Error: Do not run this script with sudo — it invokes sudo internally only for apt."
+    exit 1
+fi
+
 # 0. Parse arguments
 ACTION="-R"
 ACTION_WORD="Stowing"
