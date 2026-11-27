@@ -59,6 +59,11 @@ if [ "$ACTION" = "-R" ]; then
     else
         echo "TPM already installed."
     fi
+
+    if [ ! -d "$HOME/.tmux/plugins/tmux-resurrect" ] || [ ! -d "$HOME/.tmux/plugins/tmux-continuum" ]; then
+        echo "Installing tmux plugins via TPM..."
+        TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins" "$TPM_DIR/bin/install_plugins"
+    fi
 fi
 
 # 1. Get the absolute path of the directory where THIS script lives
