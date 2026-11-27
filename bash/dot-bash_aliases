@@ -13,6 +13,7 @@ fi
 bind 'set bell-style none'
 alias gemini='/google/bin/releases/gemini-cli/tools/gemini'
 alias jetski='/google/bin/releases/jetski-devs/tools/cli'
+export JETSKI_CLI_LOGO_STYLE=text
 
 # --- GIT STUFF ---
 # pretty git log
